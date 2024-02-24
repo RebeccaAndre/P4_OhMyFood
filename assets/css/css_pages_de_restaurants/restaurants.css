@@ -64,6 +64,29 @@ footer ul li .liens-footer-partenaire:hover {
   text-decoration: underline;
 }
 
+/****** Ajout d'une classe d'animation pour chaque groupe avec des décalages de temps ***********/
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.entrees {
+  animation: fadeInUp 0.5s ease 0.5s both;
+}
+
+.plats {
+  animation: fadeInUp 0.5s ease 1.5s both;
+}
+
+.desserts {
+  animation: fadeInUp 0.5s ease 2.5s both;
+}
+
 /****** Header: Logo/aliment + icone "Go back" ***********/
 .main-container {
   margin: 0 auto;
