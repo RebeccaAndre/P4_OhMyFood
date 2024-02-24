@@ -1,0 +1,223 @@
+@charset "UTF-8";
+/****** General ***********/
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+/****** Déclaration des variables ***********/
+/****** mixin ***********/
+body {
+  margin: 0;
+}
+
+.main-container {
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+/* Conteneur du loader */
+.loader-container {
+  position: fixed; /* Positionnement fixe pour maintenir le loader en place lors du défilement */
+  top: 0; /* Distance du haut de la fenêtre du navigateur */
+  left: 0; /* Distance de la gauche de la fenêtre du navigateur */
+  z-index: 1000; /* Empilement en z, assure que le loader est au-dessus de tout autre contenu */
+  display: flex; /* Utilisation de Flexbox pour le centrage */
+  align-items: center; /* Centrage vertical */
+  justify-content: center; /* Centrage horizontal */
+  width: 100%; /* Largeur pleine de la fenêtre du navigateur */
+  height: 100vh; /* Hauteur pleine de la fenêtre du navigateur */
+  background-color: #2980b9; /* Couleur de fond du loader */
+  opacity: 1; /* Opacité du loader */
+  animation: fadeOut 0.5s 3s forwards; /* Animation de fondu pour faire disparaître le loader */
+}
+
+/* Les points animés */
+.dot {
+  width: 20px; /* Largeur du point */
+  height: 20px; /* Hauteur du point */
+  background-color: #ffffff; /* Couleur du point */
+  border-radius: 50%; /* Forme du point : cercle */
+  margin: 0 5px; /* Marge horizontale entre les points */
+  animation: bounce 1s linear infinite; /* Animation de rebond pour donner l'effet de chargement */
+  animation-fill-mode: backwards; /* Définit la valeur de départ de l'animation */
+}
+
+/* Délai d'animation pour chaque point */
+.dot1 {
+  animation-delay: 0.2s; /* Délai pour le premier point */
+}
+
+.dot2 {
+  animation-delay: 0.3s; /* Délai pour le deuxième point */
+}
+
+.dot3 {
+  animation-delay: 0.4s; /* Délai pour le troisième point */
+}
+
+/* Animation de rebond */
+@keyframes bounce {
+  to {
+    transform: translateY(-10px); /* Translation vers le haut pour le rebond */
+  }
+}
+/* Animation de fondu pour faire disparaître le loader */
+@keyframes fadeOut {
+  to {
+    opacity: 0; /* Opacité à 0 pour le fondu */
+    visibility: hidden; /* Visibilité cachée */
+    height: 0; /* Hauteur à 0 */
+  }
+}
+/****** Header: Logo/aliment + Emplacement ***********/
+header {
+  width: 100%;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Shrikhand, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  padding: 14px 0 13px 0;
+  margin: 0;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  position: relative;
+}
+
+/****** Emplacement ***********/
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eaeaea;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  z-index: 1;
+  position: relative;
+}
+
+.paris-belleville {
+  color: #101010;
+  font-size: 16px;
+  font-weight: 500;
+  background: #eaeaea;
+  border: none;
+  text-align: center;
+  padding: 17px;
+  max-width: 28%;
+}
+
+/****** Section titre + button Gradient ***********/
+.backgroundSection {
+  background: #f6f6f6;
+  text-align: center;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.reservez-menu {
+  margin: 0;
+  padding-top: 39px;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 300;
+  color: #353535;
+}
+
+.btnGradient {
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 25px;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 13px 18.75px 13px 18.75px;
+  margin-bottom: 57px;
+  text-align: center;
+  width: 218px;
+  height: 50px;
+  border: none;
+}
+
+.btnGradient:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+/****** Section fonctionnement ***********/
+.fonctionnement {
+  padding: 48px 20px 0 20px;
+}
+@media screen and (min-width: 1024px) {
+  .fonctionnement {
+    padding: 50px 180px 0 180px;
+  }
+}
+.fonctionnement .ellipse {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 25px;
+  margin-top: 26px;
+  padding-bottom: 48px;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 1024px) {
+  .fonctionnement .ellipse {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 50px;
+  }
+}
+.fonctionnement .ellipse .number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #9356dc;
+  color: #ffffff;
+  position: absolute;
+  left: 8px;
+}
+@media screen and (min-width: 1024px) {
+  .fonctionnement .ellipse .number {
+    left: -14px;
+    top: 26px;
+  }
+}
+.fonctionnement .ellipse .commande-mobile {
+  display: flex;
+  flex-direction: row;
+  gap: 27px;
+  border: 2px solid #f6f6f6;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  padding: 28px 0 28px 33px;
+  text-align: center;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
+}
+@media screen and (min-width: 1024px) {
+  .fonctionnement .ellipse .commande-mobile {
+    flex-grow: 1;
+    transform: scale(1.02);
+  }
+}
+.fonctionnement .ellipse .commande-mobile .txt-commande-mobile {
+  font-weight: 500;
+}
+.fonctionnement .ellipse .commande-mobile .color-icones-fonctionnement {
+  color: #7e7e7e;
+}
+.fonctionnement .ellipse .commande-mobile .color-icones-fonctionnement:hover {
+  color: #9356dc;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
