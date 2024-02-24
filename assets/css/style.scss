@@ -247,6 +247,139 @@ p {
   }
 }
 
+/****** Section Restaurants ***********/
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: $background;
+  padding: $menu-padding;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: $black;
+  position: relative;
+
+  @media screen and (min-width: 1024px) {
+    padding: 30px 180px;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .section-restaurants {
+    padding-left: 2px;
+  }
+
+  .card-menu {
+    border-radius: 15px;
+    background: $white;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+    flex-shrink: 1;
+    text-decoration: none;
+    color: $black;
+
+    @media screen and (min-width: 1024px) {
+      flex-basis: 32%;
+      flex-grow: 1;
+    }
+
+    img {
+      border-radius: 15px 15px 0 0;
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 16/9;
+    }
+
+    .titre-menu {
+      margin-bottom: 5px;
+      margin-top: 15px;
+      padding-left: 13px;
+    }
+
+    .sous-titre-menu {
+      font-size: 17px;
+      margin-top: 0;
+      margin-bottom: 12px;
+      padding-left: 13px;
+    }
+  }
+}
+
+article {
+  position: relative;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: flex-start;
+  gap: 50px;
+}
+
+.badge-nouveau {
+  border-radius: 2px;
+  background: $green;
+  padding: $badge-padding;
+  box-shadow: $badge-shadow;
+  position: absolute;
+  right: 13px;
+  top: 10px;
+}
+
+/* Style pour positionner le conteneur du cœur */
+.position-heart {
+  display: flex; /* Utilisation de Flexbox pour le positionnement */
+  flex-direction: row-reverse; /* Les éléments à l'intérieur seront alignés horizontalement en sens inverse */
+  align-items: flex-end; /* Alignement des éléments enfants au bas du conteneur */
+  bottom: 12px; /* Positionnement à 12 pixels du bas */
+  right: 25px; /* Positionnement à 25 pixels de la droite */
+}
+
+/* Style pour le cœur */
+.coeur {
+  position: absolute; /* Position absolue pour permettre le positionnement libre */
+  font-size: 28px; /* Taille de la police */
+  cursor: pointer; /* Curseur indiquant que l'élément est cliquable */
+  width: 10%; /* Largeur de l'élément */
+}
+
+/* Style pour le cœur rempli (initialement caché) */
+.like-full {
+  opacity: 0; /* Opacité initiale à 0 pour le cœur rempli */
+  transition-property: all; /* Spécifie les propriétés CSS à animer lors d'un changement */
+}
+
+/* Style au survol du cœur */
+.coeur:hover {
+  opacity: 1; /* Opacité à 1 au survol */
+  background-image: linear-gradient(
+    193.33deg,
+    #9356dc -11.44%,
+    #ff79da 123.93%
+  ); /* Dégradé de couleurs pour le fond */
+  -webkit-background-clip: text; /* Indique que le dégradé doit remplir le texte */
+  background-clip: text; /* Idem pour les navigateurs non-WebKit */
+  color: transparent; /* Rend le texte transparent pour montrer le dégradé */
+}
+
+.badge-nouveau-2 {
+  border-radius: 2px;
+  background: $green;
+  padding: $badge-padding;
+  box-shadow: $badge-shadow;
+  position: absolute;
+  right: 13px;
+  top: 10px;
+}
+
+.nouveau {
+  color: $green-Font;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+}
+
 ****** Footer ***********/ footer {
   display: flex;
   flex-direction: column;
