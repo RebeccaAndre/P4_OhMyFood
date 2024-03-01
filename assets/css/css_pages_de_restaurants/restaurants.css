@@ -226,12 +226,18 @@ main {
   font-size: 18px;
   font-weight: 500;
   margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .description-du-plat {
   font-size: 15.04px;
   font-weight: 300;
   margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .nom-du-plat,

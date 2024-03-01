@@ -9,57 +9,57 @@ body {
 
 /* Conteneur du loader */
 .loader-container {
-  position: fixed; /* Positionnement fixe pour maintenir le loader en place lors du défilement */
-  top: 0; /* Distance du haut de la fenêtre du navigateur */
-  left: 0; /* Distance de la gauche de la fenêtre du navigateur */
-  z-index: 1000; /* Empilement en z, assure que le loader est au-dessus de tout autre contenu */
-  display: flex; /* Utilisation de Flexbox pour le centrage */
-  align-items: center; /* Centrage vertical */
-  justify-content: center; /* Centrage horizontal */
-  width: 100%; /* Largeur pleine de la fenêtre du navigateur */
-  height: 100vh; /* Hauteur pleine de la fenêtre du navigateur */
-  background-color: $loader; /* Couleur de fond du loader */
-  opacity: 1; /* Opacité du loader */
-  animation: fadeOut 0.5s 3s forwards; /* Animation de fondu pour faire disparaître le loader */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: $primary;
+  opacity: 1;
+  animation: fadeOut 0.5s 3s forwards;
 }
 
 /* Les points animés */
 .dot {
-  width: 20px; /* Largeur du point */
-  height: 20px; /* Hauteur du point */
-  background-color: $white; /* Couleur du point */
-  border-radius: 50%; /* Forme du point : cercle */
-  margin: 0 5px; /* Marge horizontale entre les points */
-  animation: bounce 1s linear infinite; /* Animation de rebond pour donner l'effet de chargement */
-  animation-fill-mode: backwards; /* Définit la valeur de départ de l'animation */
+  width: 20px;
+  height: 20px;
+  background-color: $white;
+  border-radius: 50%;
+  margin: 0 5px;
+  animation: bounce 1s linear infinite;
+  animation-fill-mode: backwards;
 }
 
 /* Délai d'animation pour chaque point */
 .dot1 {
-  animation-delay: 0.2s; /* Délai pour le premier point */
+  animation-delay: 0.2s;
 }
 
 .dot2 {
-  animation-delay: 0.3s; /* Délai pour le deuxième point */
+  animation-delay: 0.3s;
 }
 
 .dot3 {
-  animation-delay: 0.4s; /* Délai pour le troisième point */
+  animation-delay: 0.4s;
 }
 
 /* Animation de rebond */
 @keyframes bounce {
   to {
-    transform: translateY(-10px); /* Translation vers le haut pour le rebond */
+    transform: translateY(-10px);
   }
 }
 
 /* Animation de fondu pour faire disparaître le loader */
 @keyframes fadeOut {
   to {
-    opacity: 0; /* Opacité à 0 pour le fondu */
-    visibility: hidden; /* Visibilité cachée */
-    height: 0; /* Hauteur à 0 */
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
   }
 }
 
@@ -210,4 +210,131 @@ p {
       }
     }
   }
+}
+
+/****** Section Restaurants ***********/
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: #f6f6f6;
+  padding: 48px 18px 48px 18px;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #101010;
+  position: relative;
+}
+@media screen and (min-width: 1024px) {
+  .menu {
+    padding: 30px 180px;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+}
+.menu .section-restaurants {
+  padding-left: 2px;
+}
+.menu .card-menu {
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  flex-shrink: 1;
+  text-decoration: none;
+  color: #101010;
+}
+@media screen and (min-width: 1024px) {
+  .menu .card-menu {
+    flex-basis: 32%;
+    flex-grow: 1;
+  }
+}
+.menu .card-menu img {
+  border-radius: 15px 15px 0 0;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+.menu .card-menu .titre-menu {
+  margin-bottom: 5px;
+  margin-top: 15px;
+  padding-left: 13px;
+}
+.menu .card-menu .sous-titre-menu {
+  font-size: 17px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  padding-left: 13px;
+}
+
+.article {
+  position: relative;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: flex-start;
+  gap: 50px;
+}
+
+.badge-nouveau {
+  border-radius: 2px;
+  background: #99e2d0;
+  padding: 7px 9.63px 6px 9px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  right: 13px;
+  top: 10px;
+}
+
+.position-heart {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  bottom: 12px;
+  right: 25px;
+}
+
+.coeur {
+  position: absolute;
+  font-size: 28px;
+  cursor: pointer;
+  width: 10%;
+}
+
+.like-full {
+  opacity: 0;
+  transition-property: all;
+}
+
+.coeur:hover {
+  opacity: 1;
+  background-image: linear-gradient(
+    193.33deg,
+    #9356dc -11.44%,
+    #ff79da 123.93%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.badge-nouveau-2 {
+  border-radius: 2px;
+  background: #99e2d0;
+  padding: 7px 9.63px 6px 9px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  right: 13px;
+  top: 10px;
+}
+
+.nouveau {
+  color: #008766;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
 }
